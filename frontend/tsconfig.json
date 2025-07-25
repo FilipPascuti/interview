@@ -32,6 +32,9 @@
       "@customTypes/*": [
         "./src/types/*"
       ],
+      "@utils/*": [
+        "./src/utils/*"
+      ]
     }
   },
   "include": [

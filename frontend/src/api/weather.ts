@@ -1,5 +1,6 @@
 import { ForecastResponse, SearchLocationResponse, Location } from '@customTypes/api/weather';
 import { queryOptions } from '@tanstack/react-query';
+import { sanitizeLocationForecastData } from '@utils/sanitizer';
 
 const WEATHER_API_SEARCH_URL = 'https://api.weatherapi.com/v1/search.json';
 const WEATHER_API_FORECAST_URL = 'https://api.weatherapi.com/v1/forecast.json';
@@ -56,4 +57,5 @@ export const locationForecastOptions = (location: Location | null) =>
         queryFn: () => locationForecast(location?.name),
         enabled: !!location?.name,
         staleTime: 60 * 60 * 1000,
+        select: sanitizeLocationForecastData,
     });
