@@ -1,31 +1,29 @@
-import { Component } from 'react';
-//import logo from './logo.svg';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Content from '@components/content';
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <h2>Welcome to the interview app!</h2>
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
+const queryClient = new QueryClient();
 
-                    <ul>
-                        <li>
-                            Fetch Data from a public API{' '}
-                            <a href="https://github.com/toddmotto/public-apis">Samples</a>
-                        </li>
-                        <li>Display data from API onto your page (Table, List, etc.)</li>
-                        <li>
-                            Apply a styling solution of your choice to make your page look different
-                            (CSS, SASS, CSS-in-JS)
-                        </li>
-                    </ul>
-                </header>
-            </div>
-        );
-    }
-}
+const darkTheme = createTheme({
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: '#6188BC',
+        },
+    },
+});
+
+const App = () => (
+    <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={darkTheme}>
+            <CssBaseline />
+            <Content />
+        </ThemeProvider>
+    </QueryClientProvider>
+);
 
 export default App;
