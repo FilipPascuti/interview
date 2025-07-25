@@ -1,4 +1,5 @@
 import { Box, Paper } from '@mui/material';
+import SideBar from '@components/sideBar';
 
 const Content = () => (
     <Box
@@ -22,7 +23,7 @@ const Content = () => (
                 borderRadius: '2.8rem',
             }}
         >
-            {/* Sidebar content   */}
+            <SideBar />
         </Paper>
         <Paper
             elevation={5}
