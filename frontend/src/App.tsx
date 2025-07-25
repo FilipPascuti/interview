@@ -5,6 +5,7 @@ import '@fontsource/roboto/700.css';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Content from '@components/content';
+import { LocationContextProvider } from '@state/locationContextProvider';
 
 const queryClient = new QueryClient();
 
@@ -19,10 +20,12 @@ const darkTheme = createTheme({
 
 const App = () => (
     <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={darkTheme}>
-            <CssBaseline />
-            <Content />
-        </ThemeProvider>
+        <LocationContextProvider>
+            <ThemeProvider theme={darkTheme}>
+                <CssBaseline />
+                <Content />
+            </ThemeProvider>
+        </LocationContextProvider>
     </QueryClientProvider>
 );
 
