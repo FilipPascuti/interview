@@ -25,6 +25,14 @@
     "noUnusedParameters": false,
     "incremental": true,
     "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@api/*": [
+        "./src/api/*"
+      ],
+      "@customTypes/*": [
+        "./src/types/*"
+      ],
+    }
   },
   "include": [
     "src/**/*"
