@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { locationForecastOptions } from '@api/weather';
 import useLocationContext from '@hooks/useLocationContext';
 import WeatherHeaderCard from '@components/weatherHeaderCard';
+import HourlyForecast from '@components/hourlyForecast';
 
 const WeatherDetailsPanel = () => {
     const { currentLocation } = useLocationContext();
@@ -41,6 +42,19 @@ const WeatherDetailsPanel = () => {
             }}
         >
             <WeatherHeaderCard location={data?.location} forecastToday={data?.forecastToday} />
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    width: '100%',
+                    gap: 4,
+                    boxSizing: 'border-box',
+                    overflow: 'auto',
+                    height: '70%',
+                }}
+            >
+                <HourlyForecast forecasts={data.hourlyForecast} />
+            </Box>
         </Box>
     );
 };
