@@ -6,6 +6,7 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Content from '@components/content';
 import { LocationContextProvider } from '@state/locationContextProvider';
+import { BookmarkedLocationsContextProvider } from '@state/bookmarkedLocationsContextProvider';
 
 const queryClient = new QueryClient();
 
@@ -20,12 +21,14 @@ const darkTheme = createTheme({
 
 const App = () => (
     <QueryClientProvider client={queryClient}>
-        <LocationContextProvider>
-            <ThemeProvider theme={darkTheme}>
-                <CssBaseline />
-                <Content />
-            </ThemeProvider>
-        </LocationContextProvider>
+        <BookmarkedLocationsContextProvider>
+            <LocationContextProvider>
+                <ThemeProvider theme={darkTheme}>
+                    <CssBaseline />
+                    <Content />
+                </ThemeProvider>
+            </LocationContextProvider>
+        </BookmarkedLocationsContextProvider>
     </QueryClientProvider>
 );
 
