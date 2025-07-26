@@ -4,6 +4,7 @@ import { locationForecastOptions } from '@api/weather';
 import useLocationContext from '@hooks/useLocationContext';
 import WeatherHeaderCard from '@components/weatherHeaderCard';
 import HourlyForecast from '@components/hourlyForecast';
+import WeeklyForecast from '@components/weeklyForecast';
 
 const WeatherDetailsPanel = () => {
     const { currentLocation } = useLocationContext();
@@ -54,6 +55,7 @@ const WeatherDetailsPanel = () => {
                 }}
             >
                 <HourlyForecast forecasts={data.hourlyForecast} />
+                <WeeklyForecast forecasts={data.weeklyForecast} />
             </Box>
         </Box>
     );
