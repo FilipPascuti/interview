@@ -1,5 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import SideBar from '@components/sideBar';
+import WeatherDetailsPanel from '@components/weatherDetailsPanel';
 
 const Content = () => (
     <Box
@@ -36,7 +37,7 @@ const Content = () => (
                 overflowX: 'hidden',
             }}
         >
-            {/*    */}
+            <WeatherDetailsPanel />
         </Paper>
     </Box>
 );
