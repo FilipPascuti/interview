@@ -3,7 +3,7 @@ import { SanitizedForecast } from '@customTypes/api/sanitizedTypes';
 import { WeatherConditionValue } from '@customTypes/weatherConditions';
 import dayjs from 'dayjs';
 
-const removeDecimal = (num: number) => {
+export const removeDecimal = (num: number) => {
     return Math.trunc(Number(num));
 };
 
