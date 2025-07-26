@@ -25,6 +25,7 @@
     "noUnusedParameters": false,
     "incremental": true,
     "noFallthroughCasesInSwitch": true,
+    "types": ["vite/client", "vitest/importMeta", "vitest/globals"],
     "paths": {
       "@api/*": [
         "./src/api/*"

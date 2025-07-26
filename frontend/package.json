@@ -8,12 +8,12 @@
     "react-dom": "19.1.0",
     "react-scripts": "5.0.1",
     "@tanstack/react-query": "5.83.0",
-    "dayjs": "^1.11.13",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@fontsource/roboto": "^5.2.6",
-    "@mui/icons-material": "^7.2.0",
-    "@mui/material": "^7.2.0"
+    "dayjs": "1.11.13",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "@fontsource/roboto": "5.2.6",
+    "@mui/icons-material": "7.2.0",
+    "@mui/material": "7.2.0"
   },
   "devDependencies": {
     "@types/react": "19.1.8",
@@ -30,7 +30,16 @@
     "eslint-plugin-react-refresh": "0.4.20",
     "typescript-eslint": "8.35.1",
     "prettier": "3.6.2",
-    "globals": "^16.3.0"
+    "globals": "16.3.0",
+    "@testing-library/dom": "10.4.0",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/jest": "30.0.0",
+    "@types/jsdom": "21.1.7",
+    "@types/testing-library__jest-dom": "6.0.0",
+    "jsdom": "26.1.0",
+    "vitest": "3.2.4"
   },
   "scripts": {
     "start": "vite",
@@ -39,7 +48,8 @@
     "fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:types": "tsc",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "eslintConfig": {
     "extends": "react-app"
