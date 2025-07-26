@@ -3,7 +3,7 @@ import { Box, Typography, Card, CardContent, Divider } from '@mui/material';
 import WaterIcon from '@mui/icons-material/Water';
 import AirIcon from '@mui/icons-material/Air';
 import ThermostatIcon from '@mui/icons-material/Thermostat';
-import BookmarkLocation from '@components/bookmarkLocationButton';
+import BookmarkLocationButton from '@components/bookmarkLocationButton';
 import { Location } from '@customTypes/api/weather';
 import { CurrentDayForecast } from '@customTypes/api/sanitizedTypes';
 import { weatherIconSource } from '@utils/weatherIcon';
@@ -77,7 +77,7 @@ const WeatherHeaderCard = ({ location, forecastToday }: Props) => (
                             <Typography fontWeight="bold" variant="h2">
                                 {forecastToday.temperature}°
                             </Typography>
-                            <BookmarkLocation location={location} />
+                            <BookmarkLocationButton location={location} />
                         </Box>
                         <Box display="flex" justifyContent="space-between" mt={2}>
                             <Typography variant="h6">
