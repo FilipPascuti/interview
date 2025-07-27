@@ -1,9 +1,8 @@
-import { Box, List, ListItem, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { DayForecast } from '@customTypes/api/sanitizedTypes';
 import DayForecastDetailsCard from '@components/dayForecastDetailsCard';
 import ScrollableList from '@components/scrollableList';
-import HourForecastDetailsCard from '@components/hourForecastDetailsCard';
 
 interface Props {
     forecasts: DayForecast[];

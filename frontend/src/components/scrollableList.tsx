@@ -1,5 +1,4 @@
 import { List, ListItem } from '@mui/material';
-import HourForecastDetailsCard from '@components/hourForecastDetailsCard';
 
 interface Props<T> {
     items: T[];

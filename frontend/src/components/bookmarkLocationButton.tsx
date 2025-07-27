@@ -11,7 +11,7 @@ interface Props {
 const BookmarkLocationButton = ({ location }: Props) => {
     const { isBookmarked, addBookmark, removeBookmark } = useBookmarkedLocationsContext();
 
-    const onClickHandler = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const onClickHandler = () => {
         if (isBookmarked(location.name)) {
             removeBookmark(location.name);
         } else {
