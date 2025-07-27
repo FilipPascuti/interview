@@ -5,6 +5,7 @@ import BookmarkedLocationCard from '@components/bookmarkedLocationCard';
 import useBookmarkedLocationsContext from '@hooks/useBookmarkedLocationsContext';
 import LocationAutocomplete from '@components/locationAutocomplete';
 import ScrollableList from '@components/scrollableList';
+import ThemeSwitcherButton from '@components/themeSwitcherButton';
 
 const SideBar = () => {
     const { currentLocation, setCurrentLocation } = useLocationContext();
@@ -22,9 +23,13 @@ const SideBar = () => {
                 boxSizing: 'border-box',
             }}
         >
-            <Typography ml={1} variant="h5" fontWeight="bold">
-                Search for a location:
-            </Typography>
+            <Box mb={3} display="flex" alignItems="center" justifyContent="space-between">
+                <Typography ml={2} variant="h5" fontWeight="bold">
+                    Search for a location:
+                </Typography>
+                <ThemeSwitcherButton />
+            </Box>
+
             <LocationAutocomplete
                 currentLocation={currentLocation}
                 setCurrentLocation={setCurrentLocation}
