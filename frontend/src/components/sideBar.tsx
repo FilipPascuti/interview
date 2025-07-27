@@ -1,4 +1,4 @@
-import { Alert, Box, List, ListItem, Typography } from '@mui/material';
+import { Alert, Box, Typography } from '@mui/material';
 
 import useLocationContext from '@hooks/useLocationContext';
 import BookmarkedLocationCard from '@components/bookmarkedLocationCard';
@@ -18,7 +18,7 @@ const SideBar = () => {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                p: 6,
+                p: 5,
                 gap: 2,
                 boxSizing: 'border-box',
             }}
@@ -30,17 +30,21 @@ const SideBar = () => {
                 <ThemeSwitcherButton />
             </Box>
 
-            <LocationAutocomplete
-                currentLocation={currentLocation}
-                setCurrentLocation={setCurrentLocation}
-            />
+            <Box pl={2} pr={2}>
+                <LocationAutocomplete
+                    currentLocation={currentLocation}
+                    setCurrentLocation={setCurrentLocation}
+                />
+            </Box>
 
-            <Typography mt={2} ml={1} variant="h5" fontWeight="bold">
+            <Typography mt={2} ml={2} variant="h5" fontWeight="bold">
                 Your Bookmarked Location:
             </Typography>
 
             {!Object.values(bookmarkedLocations ?? {}).length && (
-                <Alert severity="info">You haven't bookmarked any locations yet.</Alert>
+                <Alert sx={{ margin: 2 }} severity="info">
+                    You haven't bookmarked any locations yet.
+                </Alert>
             )}
 
             <ScrollableList

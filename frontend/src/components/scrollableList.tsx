@@ -12,6 +12,7 @@ const ScrollableList = <T,>({ items, renderItem }: Props<T>) => (
         sx={{
             boxSizing: 'border-box',
             width: '100%',
+            padding: '1rem',
             overflow: 'auto',
             scrollbarWidth: 'none',
             '&::-webkit-scrollbar': {

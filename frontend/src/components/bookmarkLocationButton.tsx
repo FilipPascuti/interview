@@ -8,7 +8,7 @@ interface Props {
     location: Location;
 }
 
-const BookmarkLocation = ({ location }: Props) => {
+const BookmarkLocationButton = ({ location }: Props) => {
     const { isBookmarked, addBookmark, removeBookmark } = useBookmarkedLocationsContext();
 
     const onClickHandler = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -30,4 +30,4 @@ const BookmarkLocation = ({ location }: Props) => {
     );
 };
 
-export default BookmarkLocation;
+export default BookmarkLocationButton;
