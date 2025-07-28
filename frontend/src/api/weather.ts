@@ -30,7 +30,7 @@ export const locationAutocompleteValuesOptions = (inputValue: string) =>
         staleTime: 10 * 1000,
     });
 
-const locationForecast = async (location?: string): Promise<ForecastResponse> => {
+export const locationForecast = async (location?: string): Promise<ForecastResponse> => {
     if (!location || !location.trim()) {
         throw new Error('Location is required to fetch the forecast.');
     }

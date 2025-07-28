@@ -25,7 +25,7 @@ const getCurrentLocation = (): Promise<{ lat: number; lng: number }> => {
             {
                 enableHighAccuracy: true,
                 timeout: 2 * 1000,
-                maximumAge: 5 * 60 * 1000,
+                maximumAge: 60 * 1000,
             },
         );
     });
