@@ -19,14 +19,7 @@ const DayForecastDetailsCard = ({ forecast }: { forecast: DayForecast }) => (
                 '&:last-child': { p: 0 },
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'space-around',
-                }}
-            >
+            <div className="flex flex-row items-center justify-around">
                 <Typography width="6rem" variant="h6">
                     {forecast.date}
                 </Typography>
@@ -48,11 +41,11 @@ const DayForecastDetailsCard = ({ forecast }: { forecast: DayForecast }) => (
                 <Typography width="3rem" variant="h6">
                     H:{forecast.maxTemperature}°
                 </Typography>
-                <Box width="4rem" display="flex" alignItems="center" justifyContent="center">
+                <div className="flex items-center justify-center w-16">
                     <WaterDropIcon fontSize="medium" />
                     <Typography variant="h6">{forecast.chanceOfRain}%</Typography>
-                </Box>
-            </Box>
+                </div>
+            </div>
         </CardContent>
     </Card>
 );

@@ -1,18 +1,9 @@
-import { Box, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import SideBar from '@components/sideBar';
 import WeatherDetailsPanel from '@components/weatherDetailsPanel';
 
 const Content = () => (
-    <Box
-        sx={{
-            display: 'flex',
-            height: '100vh',
-            width: '100vw',
-            gap: '2rem',
-            boxSizing: 'border-box',
-            p: 2,
-        }}
-    >
+    <div className="flex h-screen w-screen gap-8 box-border p-4">
         <Paper
             elevation={5}
             sx={{
@@ -39,7 +30,7 @@ const Content = () => (
         >
             <WeatherDetailsPanel />
         </Paper>
-    </Box>
+    </div>
 );
 
 export default Content;

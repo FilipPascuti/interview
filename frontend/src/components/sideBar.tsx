@@ -1,4 +1,4 @@
-import { Alert, Box, Typography } from '@mui/material';
+import { Alert, Typography } from '@mui/material';
 
 import useLocationContext from '@hooks/useLocationContext';
 import BookmarkedLocationCard from '@components/bookmarkedLocationCard';
@@ -13,38 +13,28 @@ const SideBar = () => {
     const { bookmarkedLocations } = useBookmarkedLocationsContext();
 
     return (
-        <Box
-            sx={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                p: 5,
-                gap: 2,
-                boxSizing: 'border-box',
-            }}
-        >
-            <Box mb={3} display="flex" alignItems="center" justifyContent="space-between">
+        <div className="w-full h-full flex flex-col p-10 gap-4 box-border">
+            <div className="flex items-center justify-between mb-6 ">
                 <Typography ml={2} variant="h5" fontWeight="bold">
                     Search for a location:
                 </Typography>
                 <ThemeSwitcherButton />
-            </Box>
+            </div>
 
-            <Box pl={2} pr={2}>
+            <div className="px-4">
                 <LocationAutocomplete
                     currentLocation={currentLocation}
                     setCurrentLocation={setCurrentLocation}
                 />
-            </Box>
+            </div>
 
             <Typography mt={2} ml={2} variant="h5" fontWeight="bold">
                 Your Current Location:
             </Typography>
 
-            <Box p={2}>
+            <div className="p-4">
                 <CurrentLocationCard />
-            </Box>
+            </div>
 
             <Typography mt={2} ml={2} variant="h5" fontWeight="bold">
                 Your Bookmarked Location:
@@ -65,7 +55,7 @@ const SideBar = () => {
                     />
                 )}
             />
-        </Box>
+        </div>
     );
 };
 

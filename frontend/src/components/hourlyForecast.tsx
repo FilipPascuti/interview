@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import { HourForecast } from '@customTypes/api/sanitizedTypes';
 import HourForecastDetailsCard from '@components/hourForecastDetailsCard';
@@ -9,17 +9,7 @@ interface Props {
 }
 
 const HourlyForecast = ({ forecasts }: Props) => (
-    <Box
-        sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-            boxSizing: 'border-box',
-            overflow: 'auto',
-            height: '100%',
-            flex: 2,
-        }}
-    >
+    <div className="flex flex-col w-full box-border overflow-auto h-full flex-[2]">
         <Typography ml={2} mb={2} fontWeight="bold" variant="h5" component="div">
             Hourly Forecast:
         </Typography>
@@ -28,7 +18,7 @@ const HourlyForecast = ({ forecasts }: Props) => (
             items={Object.values(forecasts)}
             renderItem={(forecast) => <HourForecastDetailsCard forecast={forecast} />}
         />
-    </Box>
+    </div>
 );
 
 export default HourlyForecast;

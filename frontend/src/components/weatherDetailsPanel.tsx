@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { locationForecastOptions } from '@api/weather';
 import useLocationContext from '@hooks/useLocationContext';
@@ -13,15 +13,9 @@ const WeatherDetailsPanel = () => {
 
     if (isLoading) {
         return (
-            <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                width="100%"
-                height="100%"
-            >
+            <div className="flex items-center justify-center w-full h-full">
                 <CircularProgress />
-            </Box>
+            </div>
         );
     }
 
@@ -30,34 +24,13 @@ const WeatherDetailsPanel = () => {
     }
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                boxSizing: 'border-box',
-                width: '100%',
-                height: '100%',
-                p: 6,
-                gap: 4,
-                overflow: 'hidden',
-            }}
-        >
+        <div className="flex flex-col box-border w-full h-full p-12 gap-8 overflow-hidden">
             <WeatherHeaderCard location={data?.location} forecastToday={data?.forecastToday} />
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    width: '100%',
-                    gap: 4,
-                    boxSizing: 'border-box',
-                    overflow: 'auto',
-                    height: '70%',
-                }}
-            >
+            <div className="flex flex-row w-full gap-8 box-border overflow-auto h-[70%]">
                 <HourlyForecast forecasts={data.hourlyForecast} />
                 <WeeklyForecast forecasts={data.weeklyForecast} />
-            </Box>
-        </Box>
+            </div>
+        </div>
     );
 };
 

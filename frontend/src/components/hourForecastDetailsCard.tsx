@@ -22,14 +22,7 @@ const HourForecastDetailsCard = ({ forecast }: Props) => (
                 '&:last-child': { p: 0 },
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'space-around',
-                }}
-            >
+            <div className="flex flex-row items-center justify-around">
                 <Typography width="6rem" variant="h6">
                     {forecast.time}
                 </Typography>
@@ -44,9 +37,8 @@ const HourForecastDetailsCard = ({ forecast }: Props) => (
                         p: 0,
                     }}
                 />
-
                 <Typography variant="h6">{forecast.temperature}°</Typography>
-            </Box>
+            </div>
         </CardContent>
     </Card>
 );

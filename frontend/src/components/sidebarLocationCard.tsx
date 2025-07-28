@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
 import { Location } from '@customTypes/api/weather';
 import { CurrentDayForecast } from '@customTypes/api/sanitizedTypes';
 
@@ -26,23 +26,8 @@ const SidebarLocationCard = ({ location, forecastToday, onClick }: Props) => (
                 '&:last-child': { p: 0 },
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    height: '100%',
-                    pl: 1,
-                    pr: 1,
-                }}
-            >
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                        maxWidth: '70%',
-                    }}
-                >
+            <div className="flex justify-between h-full px-2">
+                <div className="flex flex-col h-full max-w-[70%]">
                     <Typography variant="h6">{location.name}</Typography>
                     <Typography variant="body2" color="textSecondary">
                         {location.country}
@@ -55,37 +40,22 @@ const SidebarLocationCard = ({ location, forecastToday, onClick }: Props) => (
                     >
                         {forecastToday.condition}
                     </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                        justifyContent: 'end',
-                    }}
-                >
+                </div>
+                <div className="flex flex-col h-full justify-end">
                     <Typography variant="h4" sx={{ ml: 'auto' }}>
                         {forecastToday?.temperature}°
                     </Typography>
 
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            width: '5rem',
-                            flexDirection: 'row',
-                            mt: 'auto',
-                            justifyContent: 'space-between',
-                        }}
-                    >
+                    <div className="flex w-20 flex-row mt-auto justify-between">
                         <Typography variant="body2" color="textSecondary">
                             H:{forecastToday?.minTemperature}°
                         </Typography>
                         <Typography variant="body2" color="textSecondary">
                             L:{forecastToday?.maxTemperature}°
                         </Typography>
-                    </Box>
-                </Box>
-            </Box>
+                    </div>
+                </div>
+            </div>
         </CardContent>
     </Card>
 );

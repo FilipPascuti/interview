@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { locationForecastOptions } from '@api/weather';
 import { Location } from '@customTypes/api/weather';
@@ -14,15 +14,9 @@ const BookmarkedLocationCard = ({ location, onClick }: Props) => {
 
     if (isLoading) {
         return (
-            <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                width="100%"
-                height="8rem"
-            >
+            <div className="flex items-center justify-center w-full h-32">
                 <CircularProgress />
-            </Box>
+            </div>
         );
     }
 

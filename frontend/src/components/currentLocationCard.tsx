@@ -1,4 +1,4 @@
-import { Alert, Box, CircularProgress } from '@mui/material';
+import { Alert, CircularProgress } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { sanitizeLocationForecastData } from '@utils/sanitizer';
 import { locationForecast } from '@api/weather';
@@ -35,15 +35,9 @@ const CurrentLocationCard = () => {
 
     if (locationCoordinatesLoading || isLoading) {
         return (
-            <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                width="100%"
-                height="8rem"
-            >
+            <div className="flex items-center justify-center w-full h-32">
                 <CircularProgress />
-            </Box>
+            </div>
         );
     }
 

@@ -28,15 +28,8 @@ const WeatherHeaderCard = ({ location, forecastToday }: Props) => (
                 flexGrow: 1,
             }}
         >
-            <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
-                sx={{
-                    height: '100%',
-                }}
-            >
-                <Box display="flex" flexDirection="column" justifyContent="center">
+            <div className="flex items-center justify-between h-full">
+                <div className="flex flex-col justify-center">
                     <Box
                         component="img"
                         src={weatherIconSource(forecastToday.condition)}
@@ -45,62 +38,37 @@ const WeatherHeaderCard = ({ location, forecastToday }: Props) => (
                             width: 200,
                         }}
                     />
-                    <Box>
-                        <Typography variant="h6">{forecastToday.condition}</Typography>
-                        <Typography variant="h6">
-                            <ThermostatIcon
-                                fontSize="small"
-                                sx={{ verticalAlign: 'middle', mr: 1 }}
-                            />
-                            Min Temperature: {forecastToday.minTemperature}°
-                        </Typography>
-                        <Typography variant="h6">
-                            <ThermostatIcon
-                                fontSize="small"
-                                sx={{ verticalAlign: 'middle', mr: 1 }}
-                            />
-                            Max Temperature: {forecastToday.maxTemperature}°
-                        </Typography>
-                    </Box>
-                </Box>
+                    <Typography variant="h6">{forecastToday.condition}</Typography>
+                    <Typography variant="h6">
+                        <ThermostatIcon fontSize="small" sx={{ verticalAlign: 'middle', mr: 1 }} />
+                        Min Temperature: {forecastToday.minTemperature}°
+                    </Typography>
+                    <Typography variant="h6">
+                        <ThermostatIcon fontSize="small" sx={{ verticalAlign: 'middle', mr: 1 }} />
+                        Max Temperature: {forecastToday.maxTemperature}°
+                    </Typography>
+                </div>
 
-                <Box
-                    display="flex"
-                    flexDirection="column"
-                    justifyContent="space-between"
-                    sx={{
-                        height: '100%',
-                    }}
-                >
-                    <Box>
-                        <Box display="flex" justifyContent="space-between">
+                <div className="flex flex-col justify-between h-full">
+                    <div>
+                        <div className="flex justify-between">
                             <Typography fontWeight="bold" variant="h2">
                                 {forecastToday.temperature}°
                             </Typography>
                             <BookmarkLocationButton location={location} />
-                        </Box>
-                        <Box display="flex" justifyContent="space-between" mt={2}>
+                        </div>
+                        <div className="flex justify-between mt-4">
                             <Typography variant="h6">
                                 {location.name}, {location.country}
                             </Typography>
-                        </Box>
+                        </div>
                         <Divider sx={{ my: 2, width: '100%' }} />
-                    </Box>
+                    </div>
 
-                    <Box
-                        display="flex"
-                        flexDirection="row"
-                        justifyContent="space-around"
-                        width="100%"
-                        gap={2}
-                    >
-                        <Box display="flex" alignItems="center" gap={1}>
+                    <div className="flex flex-row justify-around w-full gap-4">
+                        <div className="flex items-center g-2">
                             <WaterIcon sx={{ fontSize: '48px' }} />
-                            <Box
-                                display="flex"
-                                flexDirection="column"
-                                justifyContent="space-between"
-                            >
+                            <div className="flex flex-col justify-between">
                                 <Typography
                                     mt=".5rem"
                                     lineHeight="1rem"
@@ -110,15 +78,11 @@ const WeatherHeaderCard = ({ location, forecastToday }: Props) => (
                                     {forecastToday.humidity}%
                                 </Typography>
                                 <Typography variant="body2">Humidity</Typography>
-                            </Box>
-                        </Box>
-                        <Box display="flex" alignItems="center" gap={1}>
+                            </div>
+                        </div>
+                        <div className="flex items-center g-2">
                             <AirIcon sx={{ fontSize: '48px' }} />
-                            <Box
-                                display="flex"
-                                flexDirection="column"
-                                justifyContent="space-between"
-                            >
+                            <div className="flex flex-col justify-between">
                                 <Typography
                                     mt=".5rem"
                                     lineHeight="1rem"
@@ -128,11 +92,11 @@ const WeatherHeaderCard = ({ location, forecastToday }: Props) => (
                                     {forecastToday.windSpeed}km/h
                                 </Typography>
                                 <Typography variant="body2">Wind</Typography>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Box>
-            </Box>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </CardContent>
     </Card>
 );
